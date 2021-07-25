@@ -22,7 +22,20 @@ struct PersistenceController {
         newNews.title = title
         newNews.strap = strap
         
-        self.save()
+        do {
+            let fetchRequest : NSFetchRequest<News> = News.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", String(id))
+            let fetchedResults = try self.container.viewContext.fetch(fetchRequest)
+            if let prod = fetchedResults.first {
+                debugPrint("Non inserisco \(prod.getTitle)")
+            } else {
+                debugPrint("Inserisco \(title)")
+                self.save()
+            }
+        }
+        catch {
+            print ("fetch task failed", error)
+        }
         
     }
     
