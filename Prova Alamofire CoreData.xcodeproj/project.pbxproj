@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,10 @@
 		79ED11ED26ADCFDB007F1E45 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79ED11EC26ADCFDB007F1E45 /* Preview Assets.xcassets */; };
 		79ED11EF26ADCFDB007F1E45 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED11EE26ADCFDB007F1E45 /* Persistence.swift */; };
 		79ED11F226ADCFDB007F1E45 /* Prova_Alamofire_CoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 79ED11F026ADCFDB007F1E45 /* Prova_Alamofire_CoreData.xcdatamodeld */; };
+		79ED11FB26ADD432007F1E45 /* News+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED11F926ADD432007F1E45 /* News+CoreDataClass.swift */; };
+		79ED11FC26ADD432007F1E45 /* News+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED11FA26ADD432007F1E45 /* News+CoreDataProperties.swift */; };
+		79ED120126ADD470007F1E45 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79ED120026ADD470007F1E45 /* ContentViewModel.swift */; };
+		79ED120426ADD594007F1E45 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 79ED120326ADD594007F1E45 /* Alamofire */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,9 @@
 		79ED11EE26ADCFDB007F1E45 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		79ED11F126ADCFDB007F1E45 /* Prova_Alamofire_CoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Prova_Alamofire_CoreData.xcdatamodel; sourceTree = "<group>"; };
 		79ED11F326ADCFDB007F1E45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79ED11F926ADD432007F1E45 /* News+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataClass.swift"; sourceTree = "<group>"; };
+		79ED11FA26ADD432007F1E45 /* News+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "News+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		79ED120026ADD470007F1E45 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79ED120426ADD594007F1E45 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,9 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				79ED11E526ADCFDA007F1E45 /* Prova_Alamofire_CoreDataApp.swift */,
-				79ED11E726ADCFDA007F1E45 /* ContentView.swift */,
+				79ED11FE26ADD456007F1E45 /* Views */,
+				79ED11FF26ADD460007F1E45 /* ViewModels */,
+				79ED11FD26ADD43F007F1E45 /* CoreData */,
 				79ED11E926ADCFDB007F1E45 /* Assets.xcassets */,
-				79ED11EE26ADCFDB007F1E45 /* Persistence.swift */,
 				79ED11F326ADCFDB007F1E45 /* Info.plist */,
 				79ED11F026ADCFDB007F1E45 /* Prova_Alamofire_CoreData.xcdatamodeld */,
 				79ED11EB26ADCFDB007F1E45 /* Preview Content */,
@@ -73,6 +82,32 @@
 				79ED11EC26ADCFDB007F1E45 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		79ED11FD26ADD43F007F1E45 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				79ED11F926ADD432007F1E45 /* News+CoreDataClass.swift */,
+				79ED11FA26ADD432007F1E45 /* News+CoreDataProperties.swift */,
+				79ED11EE26ADCFDB007F1E45 /* Persistence.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		79ED11FE26ADD456007F1E45 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				79ED11E726ADCFDA007F1E45 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		79ED11FF26ADD460007F1E45 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				79ED120026ADD470007F1E45 /* ContentViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -91,6 +126,9 @@
 			dependencies = (
 			);
 			name = "Prova Alamofire CoreData";
+			packageProductDependencies = (
+				79ED120326ADD594007F1E45 /* Alamofire */,
+			);
 			productName = "Prova Alamofire CoreData";
 			productReference = 79ED11E226ADCFDA007F1E45 /* Prova Alamofire CoreData.app */;
 			productType = "com.apple.product-type.application";
@@ -118,6 +156,9 @@
 				Base,
 			);
 			mainGroup = 79ED11D926ADCFDA007F1E45;
+			packageReferences = (
+				79ED120226ADD594007F1E45 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = 79ED11E326ADCFDA007F1E45 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -146,7 +187,10 @@
 			files = (
 				79ED11EF26ADCFDB007F1E45 /* Persistence.swift in Sources */,
 				79ED11E826ADCFDA007F1E45 /* ContentView.swift in Sources */,
+				79ED11FB26ADD432007F1E45 /* News+CoreDataClass.swift in Sources */,
+				79ED120126ADD470007F1E45 /* ContentViewModel.swift in Sources */,
 				79ED11F226ADCFDB007F1E45 /* Prova_Alamofire_CoreData.xcdatamodeld in Sources */,
+				79ED11FC26ADD432007F1E45 /* News+CoreDataProperties.swift in Sources */,
 				79ED11E626ADCFDA007F1E45 /* Prova_Alamofire_CoreDataApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +380,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		79ED120226ADD594007F1E45 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		79ED120326ADD594007F1E45 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 79ED120226ADD594007F1E45 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		79ED11F026ADCFDB007F1E45 /* Prova_Alamofire_CoreData.xcdatamodeld */ = {
