@@ -17,11 +17,6 @@ struct PersistenceController {
         
         let newsId = Int64(id)
         
-        let newNews = News(context: self.container.viewContext)
-        newNews.id = newsId
-        newNews.title = title
-        newNews.strap = strap
-        
         do {
             let fetchRequest : NSFetchRequest<News> = News.fetchRequest()
             fetchRequest.predicate = NSPredicate(format: "id == %@", String(id))
@@ -29,6 +24,10 @@ struct PersistenceController {
             if let prod = fetchedResults.first {
                 debugPrint("Non inserisco \(prod.getTitle)")
             } else {
+                let newNews = News(context: self.container.viewContext)
+                newNews.id = newsId
+                newNews.title = title
+                newNews.strap = strap
                 debugPrint("Inserisco \(title)")
                 self.save()
             }
